@@ -1,0 +1,17 @@
+{
+  "functionCode": "CARD-CREATEPREPAIDCARD-TCPIP-WAY4GW",
+  "request": {
+    "channelId": "HDBMBAPP",
+    "partnerId": "HDMONEY",
+    "requestId": "e4534c00-4f96-4773-973a-d33a7211c396",
+    "serviceCode": "1",
+    "requestTime": "11417973193165"
+  },
+  "data": {
+    "fullName": "NGUYEN THI DUYEN",
+    "phoneNumber": "0943149861",
+    "emailAddress": "binhlh@hdbank.com.vn",
+    "idNumber": "999999",
+    "dummy": "99999999"
+  }
+}

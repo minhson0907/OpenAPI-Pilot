@@ -1,0 +1,13 @@
+{
+  "request": {
+    "requestId": "123",
+    "requestTime": "11417973193165"
+  },
+  "data": {
+    "acctNo": "002",
+    "contractNumber": "498",
+    "amount": 100,
+    "currency": "VND",
+    "narrative": "VJA PAYMENT"
+  }
+}

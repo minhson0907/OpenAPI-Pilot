@@ -1,0 +1,15 @@
+{
+  "request": {
+    "clientId": "DEFAULT",
+    "requestId": "123",
+    "requestTime": "04122020181210"
+  },
+  "data": {
+    "fromAccountNumber": "456",
+    "transferAmount": "789",
+    "transferDescription": "chuyen khoan thanh toan citad",
+    "toAccountNumber": "abc",
+    "toAccountName": "DINH MANH TIEN",
+    "toBankId": "efd"
+  }
+}

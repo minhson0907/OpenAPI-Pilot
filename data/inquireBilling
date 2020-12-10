@@ -1,0 +1,16 @@
+{
+  "requestId": "5568829444849664",
+  "requestTime": "11417973193165",
+  "data": {
+    "providerId": "123",
+    "serviceType": "ELECTRIC",
+    "customerCode": "PA22050607100",
+    "userName": "chungnq86",
+    "accountNumber": "068704070012891",
+    "merchantId": "456",
+    "amount": "468642",
+    "phoneNumber": "0965765473",
+    "paraOption2": "string",
+    "paraOption3": "string"
+  }
+}

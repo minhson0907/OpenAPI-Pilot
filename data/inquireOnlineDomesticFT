@@ -1,0 +1,13 @@
+{
+  "request": {
+    "clientId": "DEFAULT",
+    "requestId": "abc"
+  },
+  "data": {
+    "fromAccountNumber": "efd",
+    "transferAmount": "313",
+    "toAccountNumber": "lkh",
+    "transferDescription": "tra tien do",
+    "bankCode": "970436"
+  }
+}

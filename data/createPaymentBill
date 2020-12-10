@@ -1,0 +1,29 @@
+{
+  "requestId": "e4534c00-4f96-4773-973a-d33a721400",
+  "requestTime": "11417973193165",
+  "serviceCode": "billing",
+  "data": {
+    "providerId": "ABC",
+    "serviceType": "ELECTRIC",
+    "customerCode": "PA22050607100",
+    "userName": "chungnq86",
+    "accountNumber": "068704070012891",
+    "merchantId": "EFD",
+    "paraOption2": "string",
+    "paraOption3": "string",
+    "amount": "468642",
+    "phoneNumber": "0965765473",
+    "topupPlanCode": "TPVNPAY100",
+    "billItems": [
+      {
+        "localBillID": "001797",
+        "billNo": "293",
+        "billSeries": "02/2020",
+        "billDetail": "Cap nuoc Tan Hoa",
+        "billValue": "102000",
+        "feeValue": "0",
+        "vatValue": "0"
+      }
+    ]
+  }
+}

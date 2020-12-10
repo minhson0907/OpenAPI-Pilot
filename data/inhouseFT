@@ -1,0 +1,12 @@
+{
+  "request": {
+    "requestId": "40d38304-288b-11eb-adc1-0242ac120002",
+    "requestTime": "04122020181210"
+  },
+  "data": {
+    "fromAccountNumber": "002704070000217",
+    "toAccountNumber": "068704070000254",
+    "transferAmount": "50000",
+    "transferDescription": "chuyen khoan"
+  }
+}

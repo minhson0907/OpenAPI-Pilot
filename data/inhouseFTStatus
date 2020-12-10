@@ -1,0 +1,11 @@
+{
+  "request": {
+    "requestId": "123",
+    "requestTime": "04122020181210"
+  },
+  "data": {
+    "bankTransactionId": "970405",
+    "fromAccountNumber": "002704070000217",
+    "transactionDate": "ab"
+  }
+}

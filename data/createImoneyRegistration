@@ -1,0 +1,12 @@
+{
+  "request": {
+    "requestId": "e4534c00-4f96-4773-973a-d33a7211c396",
+    "requestTime": "21102020193165"
+  },
+  "data": {
+    "fullName": "ABC",
+    "phoneNumber": "0943149861",
+    "emailAddress": "binhlh@hdbank.com.vn",
+    "idNumber": "00999999234"
+  }
+}
