@@ -14,9 +14,9 @@ public class customerOnboardSteps extends TestBase {
 
     String cardNumber;
 
-    @And("^I create iMoney card with \"([^\"]*)\" name from \"([^\"]*)\" file$")
-    public void iCreateSkyClubCardWithFromFile(String name,String path) throws Throwable {
-        String oldRequestId, oldNumberPhone, oldName;
+    @And("^I create iMoney card with \"([^\"]*)\" name and \"([^\"]*)\" email from \"([^\"]*)\" file$")
+    public void iCreateSkyClubCardWithFromFile(String name, String email,String path) throws Throwable {
+        String oldRequestId, oldNumberPhone, oldName, oldEmail;
         File file = new File(System.getProperty("user.dir") + "\\data\\" + path);
         String filePath = file.getAbsolutePath();
         //Instantiating the Scanner class to read the file
@@ -35,6 +35,7 @@ public class customerOnboardSteps extends TestBase {
         oldRequestId = getValueInLine(path,18,54,2);
         oldNumberPhone = getValueInLine(path,20,30,7);
         oldName = getValueInLine(path,17,20,6);
+        oldEmail = getValueInLine(path,21,26,8);
 
         // Random requestId
         String newRequestId = UUID.randomUUID().toString();
@@ -46,6 +47,7 @@ public class customerOnboardSteps extends TestBase {
         fileContents = fileContents.replaceAll(oldRequestId, newRequestId);
         fileContents = fileContents.replaceAll(oldName,name);
         fileContents = fileContents.replaceAll(oldNumberPhone, newPhoneNumber);
+        fileContents = fileContents.replaceAll(oldEmail,email);
         waitElement(By.id("body"));
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }

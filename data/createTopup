@@ -1,7 +1,7 @@
 {
   "requestId": "e45",
   "requestTime": "11417973193165",
-  "serviceCode": "billing/topup",
+  "serviceCode": "billing",
   "data": {
     "providerId": "EVN",
     "serviceType": "ELECTRIC",
@@ -13,6 +13,16 @@
     "phoneNumber": "0965765473",
     "paraOption2": "string",
     "paraOption3": "string",
-    "topupPlanCode": "TPVNPAY100"
+    "topupPlanCode": "TPVNPAY100",
+    "billItems": [
+      {
+        "localBillID": "001797",
+        "billNo": "293",
+        "billSeries": "2020",
+        "billValue": "102000",
+        "feeValue": "0",
+        "vatValue": "0"
+      }
+    ]
   }
 }

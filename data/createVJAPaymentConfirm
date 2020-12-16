@@ -1,0 +1,14 @@
+{
+  "request": {
+    "requestId": "abc"
+  },
+  "data": {
+    "cardNumber": "510354531860",
+    "amount": 10000,
+    "currency": "VND",
+    "narrative": "VJA PAYMENT",
+    "userName": "0978643918",
+    "otp": ,
+    "otpMessage": "Otp message"
+  }
+}

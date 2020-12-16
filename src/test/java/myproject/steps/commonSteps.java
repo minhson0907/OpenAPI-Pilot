@@ -1,5 +1,6 @@
 package myproject.steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -126,5 +127,10 @@ public class commonSteps extends TestBase {
 //        Thread.sleep(1000);
 //        driver.findElement(By.xpath("//div[@class='parameterOther']//a[text()='Generate']")).click();
         clickToElementByJS("//div[@class='parameterOther']//a[text()='Generate']");
+    }
+
+    @And("^I wait for \"([^\"]*)\" seconds$")
+    public void iWaitForSeconds(int seconds) throws Exception {
+        Thread.sleep(seconds * 1000);
     }
 }

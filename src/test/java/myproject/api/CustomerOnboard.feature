@@ -9,7 +9,7 @@ Feature: Customer Onboard Service
     Then I access into "createImoneyRegistration" api
     And I click on "Try it" tab
     And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
-    And I create iMoney card with "QC HDBANK" name from "createImoneyRegistration" file
+    And I create iMoney card with "QC HDBANK" name and "qcteam@hdbank.com.vn" email from "createImoneyRegistration" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
     And I logout with "minhson"
@@ -22,7 +22,7 @@ Feature: Customer Onboard Service
     Then I access into "createImoneyRegistration" api
     And I click on "Try it" tab
     And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
-    And I create iMoney card with "QC HDBANK" name from "createImoneyRegistration" file
+    And I create iMoney card with "QC HDBANK" name and "qcteam@hdbank.com.vn" email from "createImoneyRegistration" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
     And I get cardNumber from the above request
@@ -36,5 +36,5 @@ Feature: Customer Onboard Service
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
     And I verify "fullName" "QC HDBANK" is displayed in response
+    And I verify "email" "qcteam@hdbank.com.vn" is displayed in response
     And I logout with "minhson"
-

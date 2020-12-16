@@ -1,19 +1,19 @@
 {
   "requestId": "e45",
   "requestTime": "11417973193165",
-  "serviceCode": "billing/topup",
+  "serviceCode": "bil",
   "data": {
-    "providerId": "EVN",
+    "providerId": "ABC",
     "serviceType": "ELECTRIC",
     "customerCode": "PA22050607100",
     "userName": "chungnq86",
     "accountNumber": "068704070012891",
-    "merchantId": "123",
+    "merchantId": "EFD",
     "amount": "468642",
     "phoneNumber": "0965765473",
     "paraOption2": "string",
     "paraOption3": "string",
-    "topupPlanCode": "TPVNPAY100",
+    "topupPlanCode": "TPVNPAY100"
     "billItems": [
       {
         "localBillID": "001797",
@@ -22,7 +22,15 @@
         "billValue": "102000",
         "feeValue": "0",
         "vatValue": "0"
-      }
+      },
+      {
+        "localBillID": "123456",
+        "billNo": "789",
+        "billSeries": "1011",
+        "billValue": "121314",
+        "feeValue": "0",
+        "vatValue": "0"
+       }
     ]
   }
 }
