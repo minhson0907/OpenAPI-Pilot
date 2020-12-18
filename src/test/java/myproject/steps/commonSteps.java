@@ -7,9 +7,6 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import myproject.base.TestBase;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 import static org.testng.Assert.assertTrue;
 
@@ -103,18 +100,6 @@ public class commonSteps extends TestBase {
         driver.findElement(By.xpath("//a[text()='"+text+"']")).click();
     }
 
-    public void endSession (String text) throws Exception{
-        List<WebElement> listSession = driver.findElements(By.xpath("//span[@class='children']"));
-        for (int i = 0; i < listSession.size(); i++) {
-            waitElement(By.xpath("//span[@class='children']"));
-            if(!listSession.get(i).getText().contains(text)){
-                System.out.println(listSession.get(i).getText());
-                listSession.get(i).click();
-                driver.findElement(By.id("edit-submit")).click();
-            }
-        }
-    }
-
     @Then("^I choose version \"([^\"]*)\"$")
     public void iChooseVersion(String version) throws Throwable {
         waitElement(By.xpath("//div[@class='apicApiCardVersion']//div[text()='"+version+"']"));
@@ -124,8 +109,6 @@ public class commonSteps extends TestBase {
     @And("^I click Generate on transactionId$")
     public void iClickGenerateOnTransactionId() throws Exception{
         waitElement(By.xpath("//div[@class='parameterOther']//a[text()='Generate']"));
-//        Thread.sleep(1000);
-//        driver.findElement(By.xpath("//div[@class='parameterOther']//a[text()='Generate']")).click();
         clickToElementByJS("//div[@class='parameterOther']//a[text()='Generate']");
     }
 

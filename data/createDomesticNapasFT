@@ -1,0 +1,13 @@
+{
+  "request": {
+    "requestId": "40d",
+    "requestTime": "01122020181210"
+  },
+  "data": {
+    "fromAccountNumber": "055",
+    "toAccountNumber": "678",
+    "transferAmount": "789",
+    "transferDescription": "chuyen tien napas",
+    "cardCode": "970406"
+  }
+}

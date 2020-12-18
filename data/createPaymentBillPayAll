@@ -1,7 +1,7 @@
 {
   "requestId": "e45",
   "requestTime": "11417973193165",
-  "serviceCode": "bil",
+  "serviceCode": "888",
   "data": {
     "providerId": "ABC",
     "serviceType": "ELECTRIC",
@@ -13,7 +13,7 @@
     "phoneNumber": "0965765473",
     "paraOption2": "string",
     "paraOption3": "string",
-    "topupPlanCode": "TPVNPAY100"
+    "topupPlanCode": "TPVNPAY100",
     "billItems": [
       {
         "localBillID": "001797",

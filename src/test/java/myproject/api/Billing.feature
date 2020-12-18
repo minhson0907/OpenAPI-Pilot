@@ -11,18 +11,18 @@ Feature: Billing Service
     And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
     And I inquire the bill with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "inquireBilling" file
     Then I click "Send" button
-    And I verify "resultCode" "00000" is displayed in response
+    And I verify "resultCode" "00" is displayed in response
     And I verify "resultMessage" "Success" is displayed in response
     And I logout with "minhson"
     Examples:
-      | serviceCode | providerId    | serviceType | customerCode | userName   | accountNumber   | merchantId | amount | phone      | topupPlanCode |
-#      | billing     | EVN           | ELECTRIC    | PA22050605807    | chungnq86  | 068704070012891 | EVNNPC     | 1000   | 0983234166 |               |
+      | serviceCode | providerId    | serviceType | customerCode     | userName  | accountNumber   | merchantId | amount | phone      | topupPlanCode |
+      | billing     | EVN           | ELECTRIC    | PA25SL0061320    | chungnq86  | 068704070012891 | EVNNPC     | 1000   | 0983234166 |               |
 #      | billing     | 190008@000002 | INTERNET    | ADSL_HCM         | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
 #      | billing     | 200000@000002 | CAP         | 1616221          | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
 #      | billing     | 109800@000003 | PHONE       | 0462511253       | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
 #      | billing     | 109800@000001 | PHONE       | 0982816517       | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
 #      | billing     | 199032@000010 | WATER       | 9022060          | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
-      | billing     | 109800@000006 | LOAN        | 20180723-9956732 | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
+#      | billing     | 109800@000006 | LOAN        | 20180723-9956732 | chungnq86 | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
 #      | topup       | VNTOPUP-VNPAY | VNTOPUP     | 9022060      | tranducnam | 186704070000673 | VNPAY      | 100000 | 0965765473 | TPVNPAY100    |
 
   @Billing-02
@@ -52,11 +52,12 @@ Feature: Billing Service
     And I verify "resultMessage" "Success" is displayed in response
     And I logout with "minhson"
     Examples:
-      | serviceCode | providerId    | serviceType | customerCode  | userName  | accountNumber   | merchantId | amount | phone      | topupPlanCode |
+      | serviceCode | providerId    | serviceType | customerCode | userName  | accountNumber   | merchantId | amount | phone      | topupPlanCode |
 #      | billing     | EVN           | ELECTRIC    | PA22050625824 | chungnq86 | 068704070012891 | EVNNPC     | 1000   | 0983234166 |               |
 #      | billing     | 199032@000010 | WATER       | 9022060       | chungnq86 | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
 #      | billing     | 190008@000002 | INTERNET    | ADSL_HCM      | chungnq86 | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
-      | billing     | 109800@000003 | PHONE       | 0462511252    | chungnq86 | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
+#      | billing     | 109800@000003 | PHONE       | 0462511252    | chungnq86 | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
+      | billing     | 200000@000002 | CAP         | 1616226      | chungnq86 | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
 
   @Billing-03
   Scenario Outline: Payment Bill - Pay All
@@ -88,8 +89,9 @@ Feature: Billing Service
     And I verify "resultMessage" "Success" is displayed in response
     And I logout with "minhson"
     Examples:
-      | serviceCode | providerId | serviceType | customerCode  | userName  | accountNumber   | merchantId | amount | phone      | topupPlanCode |
-      | billing     | EVN        | ELECTRIC    | PA25SLLT48002 | chungnq86 | 068704070012891 | EVNNPC     | 1000   | 0983234166 |               |
+      | serviceCode | providerId    | serviceType | customerCode  | userName  | accountNumber   | merchantId | amount | phone      | topupPlanCode |
+      | billing     | EVN           | ELECTRIC    | PA25SL0056456 | chungnq86 | 068704070012891 | EVNNPC     | 1000   | 0983234166 |               |
+#      | billing     | 200000@000002 | CAP         | 1616226       | chungnq86 | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
 
   @Billing-04
   Scenario: inquireServiceList

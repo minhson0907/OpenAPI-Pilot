@@ -8,7 +8,7 @@ Feature: Card Service
     And I choose version "1.0.0"
     Then I access into "inquireVJACardInfo" api
     And I click on "Try it" tab
-    And I input "d8a5c6ec-df96-4210-8828-f23343d9a0e0" into Authorization
+    And I input "aabb8010-2ce1-4fb9-90e6-a182b3a2c8c8" into Authorization
     And I inquire VJA card information with "513838773150" card number and "0983234167" user name from "inquireVJACardInfo" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -25,7 +25,7 @@ Feature: Card Service
     And I choose version "1.0.0"
     Then I access into "createVJAPaymentRequest" api
     And I click on "Try it" tab
-    And I input "d8a5c6eca-df96-4210-8828-f23343d9a0e0" into Authorization
+    And I input "a7ef291c-f7ae-41cd-9c9a-8805ffcb48b9" into Authorization
     And I send a request otp with "513838773150" cardNumber, "20000" amount and "0983234167" userName from "createVJAPaymentRequest" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -34,7 +34,7 @@ Feature: Card Service
     And I choose version "1.0.0"
     Then I access into "createVJAPaymentConfirm" api
     And I click on "Try it" tab
-    And I input "d8a5c6ec-df96-4210-8828-f23343d9a0e0" into Authorization
+    And I input "a7ef291c-f7ae-41cd-9c9a-8805ffcb48b9" into Authorization
     Then I pay VJA ticket with the above otp, "513838773150" cardNumber, "20000" amount and "0983234167" userName from "createVJAPaymentConfirm" file
     And I wait for "60" seconds
     Then I click "Send" button
@@ -47,7 +47,7 @@ Feature: Card Service
     And I choose version "1.0.0"
     Then I access into "inquireVJAPaymentHis" api
     And I click on "Try it" tab
-    And I input "d8a5c6ec-df96-4210-8828-f23343d9a0e0" into Authorization
+    And I input "aabb8010-2ce1-4fb9-90e6-a182b3a2c8c8" into Authorization
     And I inquire VJA payment history with "513838773150" card number from "inquireVJAPaymentHis" file within a month
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response

@@ -11,7 +11,8 @@ Feature: Inhouse FT
     And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
     And I transfer from "002704070000217" to "068704070000254" with "5000" amount from "inhouseFT" file
     Then I click "Send" button
-    And I verify "resultCode" "000" is displayed in response
+    And I verify "resultCode" "00" is displayed in response
+    And I verify "resultMessage" "Success" is displayed in response
     And I logout with "minhson"
 
   @InhouseFT-02
@@ -24,7 +25,8 @@ Feature: Inhouse FT
     And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
     And I transfer from "002704070000217" to "068704070000254" with "5000" amount from "inhouseFT" file
     Then I click "Send" button
-    And I verify "resultCode" "000" is displayed in response
+    And I verify "resultCode" "00" is displayed in response
+    And I verify "resultMessage" "Success" is displayed in response
     And I get trace number from the above response
     When I access into "API Products"
     When I access into "InhouseFTProduct" on portal at 2 page
