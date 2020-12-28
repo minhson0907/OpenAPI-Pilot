@@ -13,13 +13,15 @@ import java.util.UUID;
 
 public class cardSteps extends TestBase {
 
-    @And("^I inquire VJA payment history with \"([^\"]*)\" card number from \"([^\"]*)\" file within a month$")
-    public void iInquireVJAPaymentHistoryWithCardNumberFromFileWithinAMonth(String cardNum, String path) throws Exception {
-        String oldCard,oldDate;
+    @And("^I inquire VJA payment history with \"([^\"]*)\" user name, \"([^\"]*)\" card number from \"([^\"]*)\" file within a month$")
+    public void iInquireVJAPaymentHistoryWithCardNumberFromFileWithinAMonth(String userName,String cardNum, String path) throws Exception {
+        String olduserName,oldCard,oldDate;
+        olduserName = getValueInLine(path,17,27,5);
         oldCard = getValueInLine(path,19,30,6);
         oldDate = getValueInLine(path,15,23,8);
         String fileContents = readFile(path);
         //Replacing the old line with new line
+        fileContents = fileContents.replaceAll(olduserName, userName);
         fileContents = fileContents.replaceAll(oldCard, cardNum);
         DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy");
         String date = dateFormat.format(new Date());
@@ -65,7 +67,7 @@ public class cardSteps extends TestBase {
         oldRequestId = getValueInLine(fileName,18,21,2);
         oldcardNumber = getValueInLine(fileName,19,31,5);
         oldamount = getValueInLine(fileName,14,19,6);
-        olduserName = getValueInLine(fileName,17,27,9);
+        olduserName = getValueInLine(fileName,17,27,8);
         String newRequestId = UUID.randomUUID().toString();
         String fileContents = readFile(fileName);
         fileContents = fileContents.replaceAll(oldRequestId, newRequestId);
@@ -83,7 +85,7 @@ public class cardSteps extends TestBase {
         oldRequestId = getValueInLine(fileName,18,21,2);
         oldcardNumber = getValueInLine(fileName,19,31,5);
         oldamount = getValueInLine(fileName,14,19,6);
-        olduserName = getValueInLine(fileName,17,27,9);
+        olduserName = getValueInLine(fileName,17,27,8);
         String newRequestId = UUID.randomUUID().toString();
         String fileContents = readFile(fileName);
         fileContents = fileContents.replaceAll(oldRequestId, newRequestId);

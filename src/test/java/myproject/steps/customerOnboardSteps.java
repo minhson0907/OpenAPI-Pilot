@@ -86,4 +86,16 @@ public class customerOnboardSteps extends TestBase {
 
     }
 
+    @And("^I inquire with \"([^\"]*)\" cardNumber from \"([^\"]*)\" file$")
+    public void iInquireWithCardNumberFromFile(String cardNumber, String fileName) throws Throwable {
+        String oldCard;
+        String fileContents = readFile(fileName);
+        oldCard = getValueInLine(fileContents,14,22,6);
+
+        //Replacing the old line with new line
+        fileContents = fileContents.replaceAll(oldCard, cardNumber);
+
+        waitElement(By.id("body"));
+        driver.findElement(By.id("body")).sendKeys(fileContents);
+    }
 }

@@ -70,6 +70,29 @@ public class TestBase {
         return fileContents;
     }
 
+    public String read_user(String filename) {
+        BufferedReader br = null;
+        String temp = null;
+        try {
+            String sCurrentLine;
+            br = new BufferedReader(new FileReader(System.getProperty("user.dir") + "\\data\\" + filename));
+
+            while ((sCurrentLine = br.readLine()) != null) {
+                temp = sCurrentLine;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (br != null) br.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+        return temp;
+    }
+
     public void waitElement(By webElement) throws Exception {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(webElement));

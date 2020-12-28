@@ -68,19 +68,19 @@ public class domesticSteps extends TestBase {
 
     }
 
-    @And("^I inquire to \"([^\"]*)\" with \"([^\"]*)\" amount and \"([^\"]*)\" cardCode from \"([^\"]*)\" file$")
-    public void iInquireToWithAmountAndCardCodeFromFile(String toAccount, String amount, String cardCode, String fileName) throws Throwable {
+    @And("^I inquire to \"([^\"]*)\" with \"([^\"]*)\" cardCode from \"([^\"]*)\" file$")
+    public void iInquireToWithAmountAndCardCodeFromFile(String toAccount, String cardCode, String fileName) throws Throwable {
         String oldRequestId,oldToAccount,oldAmount,oldCardCode;
         oldRequestId = getValueInLine(fileName,18,21,2);
-        oldToAccount = getValueInLine(fileName,24,27,6);
-        oldAmount = getValueInLine(fileName,23,26,5);
-        oldCardCode = getValueInLine(fileName,17,23,7);
+        oldToAccount = getValueInLine(fileName,24,27,5);
+//        oldAmount = getValueInLine(fileName,23,26,5);
+        oldCardCode = getValueInLine(fileName,17,23,6);
 
         String newRequestId = UUID.randomUUID().toString();
         String fileContents = readFile(fileName);
         //Replacing the old line with new line
         fileContents = fileContents.replaceAll(oldRequestId, newRequestId);
-        fileContents = fileContents.replaceAll(oldAmount, amount);
+//        fileContents = fileContents.replaceAll(oldAmount, amount);
         fileContents = fileContents.replaceAll(oldToAccount, toAccount);
         fileContents = fileContents.replaceAll(oldCardCode,cardCode);
 

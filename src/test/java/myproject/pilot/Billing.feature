@@ -4,35 +4,35 @@ Feature: Billing Service
   @Billing-01
   Scenario Outline: Inquire Bill
     Given I login with "minhson" and "Son112233!"
-    When I access into "BillingService" on portal at 1 page
+    When I access into "BillingService_Product" on portal at 1 page
     And I choose version "1.0.0"
     Then I access into "inquireBill" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
     And I inquire the bill with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "inquireBilling" file
     Then I click "Send" button
     And I verify "resultCode" "00" is displayed in response
     And I verify "resultMessage" "Success" is displayed in response
     And I logout with "minhson"
     Examples:
-      | serviceCode | providerId    | serviceType | customerCode     | userName  | accountNumber   | merchantId | amount | phone      | topupPlanCode |
-      | billing     | EVN           | ELECTRIC    | PA25SL0061320    | chungnq86  | 068704070012891 | EVNNPC     | 1000   | 0983234166 |               |
-#      | billing     | 190008@000002 | INTERNET    | ADSL_HCM         | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
-#      | billing     | 200000@000002 | CAP         | 1616221          | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
-#      | billing     | 109800@000003 | PHONE       | 0462511253       | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
-#      | billing     | 109800@000001 | PHONE       | 0982816517       | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
-#      | billing     | 199032@000010 | WATER       | 9022060          | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
-#      | billing     | 109800@000006 | LOAN        | 20180723-9956732 | chungnq86 | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
-#      | topup       | VNTOPUP-VNPAY | VNTOPUP     | 9022060      | tranducnam | 186704070000673 | VNPAY      | 100000 | 0965765473 | TPVNPAY100    |
+      | serviceCode | providerId    | serviceType | customerCode   | userName   | accountNumber   | merchantId | amount | phone      | topupPlanCode |
+#      | billing     | EVN           | ELECTRIC    | PK06000122470  | chungnq86  | 068704070012891 | EVNNPC     | 1000   | 0983234166 |               |
+#      | billing     | 190008@000002 | INTERNET    | CTO-01-0134638 | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
+#      | billing     | 200000@000002 | CAP         | 0011900910A    | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
+#      | billing     | 109800@000003 | PHONE       | 0348736666     | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
+#      | billing     | 109800@000001 | PHONE       | 0982816517     | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
+#      | billing     | 199032@000010 | WATER       | 01072785320    | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
+#      | billing     | 109800@000006 | LOAN        | 812550023530   | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
+      | topup       | VNTOPUP-VNPAY | VNTOPUP     | ED017747416    | minhson0907 | 002704070016025 | VNPAY      | 100000 | 0965765473 | TPVNPAY100    |
 
   @Billing-02
   Scenario Outline: Payment Bill - Pay One
     Given I login with "minhson" and "Son112233!"
-    When I access into "BillingService" on portal at 1 page
+    When I access into "BillingService_Product" on portal at 1 page
     And I choose version "1.0.0"
     Then I access into "inquireBill" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
     And I inquire the bill with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "inquireBilling" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -45,7 +45,7 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "createPaymentBill" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
     And I pay the above bill with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "createPaymentBill" file
     Then I click "Send" button
     And I verify "resultCode" "00000" is displayed in response
@@ -62,11 +62,11 @@ Feature: Billing Service
   @Billing-03
   Scenario Outline: Payment Bill - Pay All
     Given I login with "minhson" and "Son112233!"
-    When I access into "BillingService" on portal at 1 page
+    When I access into "BillingService_Product" on portal at 1 page
     And I choose version "1.0.0"
     Then I access into "inquireBill" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
     And I inquire the bill with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "inquireBilling" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -83,24 +83,24 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "createPaymentBill" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
     And I pay all the above bill with with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "createPaymentBillPayAll" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
     And I logout with "minhson"
     Examples:
-      | serviceCode | providerId    | serviceType | customerCode  | userName  | accountNumber   | merchantId | amount | phone      | topupPlanCode |
-      | billing     | EVN           | ELECTRIC    | PA25SL0056456 | chungnq86 | 068704070012891 | EVNNPC     | 1000   | 0983234166 |               |
+      | serviceCode | providerId | serviceType | customerCode  | userName  | accountNumber   | merchantId | amount | phone      | topupPlanCode |
+      | billing     | EVN        | ELECTRIC    | PA25SL0056456 | chungnq86 | 068704070012891 | EVNNPC     | 1000   | 0983234166 |               |
 #      | billing     | 200000@000002 | CAP         | 1616226       | chungnq86 | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
 
   @Billing-04
   Scenario: inquireServiceList
     Given I login with "minhson" and "Son112233!"
-    When I access into "BillingService" on portal at 1 page
+    When I access into "BillingService_Product" on portal at 1 page
     And I choose version "1.0.0"
     Then I access into "inquireServiceList" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
     And I inquire service list with serviceType is "BILLING" from "inquireServiceList" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -114,11 +114,11 @@ Feature: Billing Service
   @Billing-05
   Scenario Outline: inquireProviderList
     Given I login with "minhson" and "Son112233!"
-    When I access into "BillingService" on portal at 1 page
+    When I access into "BillingService_Product" on portal at 1 page
     And I choose version "1.0.0"
     Then I access into "inquireProviderList" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
     And I inquire provider list with serviceType is "<serviceType>" and serviceCode is "<serviceCode>" from "inquireProviderList" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -135,11 +135,11 @@ Feature: Billing Service
   @Billing-06
   Scenario: inquireTopupCodes
     Given I login with "minhson" and "Son112233!"
-    When I access into "BillingService" on portal at 1 page
+    When I access into "BillingService_Product" on portal at 1 page
     And I choose version "1.0.0"
     Then I access into "inquireTopupCodes" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
     And I inquire code topup with providerId is "VNPAY" from "inquireTopupCodes" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -156,11 +156,11 @@ Feature: Billing Service
   @Billing-07
   Scenario Outline: Topup mobile
     Given I login with "minhson" and "Son112233!"
-    When I access into "BillingService" on portal at 1 page
+    When I access into "BillingService_Product" on portal at 1 page
     And I choose version "1.0.0"
     Then I access into "createPaymentBill" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
     And I topup with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "createTopup" file
     Then I click "Send" button
     And I verify "resultCode" "00000" is displayed in response
@@ -173,11 +173,11 @@ Feature: Billing Service
   @Billing-08
   Scenario Outline: Payment loan
     Given I login with "minhson" and "Son112233!"
-    When I access into "BillingService" on portal at 1 page
+    When I access into "BillingService_Product" on portal at 1 page
     And I choose version "1.0.0"
     Then I access into "createPaymentBill" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
     And I pay loan with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "createTopup" file
     Then I click "Send" button
     And I verify "resultCode" "00000" is displayed in response

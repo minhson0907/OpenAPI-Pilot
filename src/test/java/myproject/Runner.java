@@ -4,9 +4,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
-        features = {"src/test/java/myproject/api"},
+        features = {"src/test/java/myproject/pilot"},
         glue = "myproject",
-        tags = {"@Billing-02"},
+        tags = {"@CustomerOnboard-01"},
         plugin = {
                 "html:target/result",
                 "pretty",

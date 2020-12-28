@@ -9,10 +9,11 @@ Feature: Napas
     Then I access into "inquireDomesticNapasFT" api
     And I click on "Try it" tab
     And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
-    And I inquire to "01018737883383" with "10000" amount and "970406" cardCode from "inquireDomesticNapasFT" file
+    And I inquire to "0129837294" with "970406" cardCode from "inquireDomesticNapasFT" file
     Then I click "Send" button
     And I verify "resultCode" "00" is displayed in response
     And I verify "resultMessage" "Success" is displayed in response
+    And I verify "toAccountName" "NGUYEN VAN NAPAS" is displayed in response
     And I logout with "minhson"
 
   @Napas-01
@@ -23,10 +24,11 @@ Feature: Napas
     Then I access into "createDomesticNapasFT" api
     And I click on "Try it" tab
     And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
-    And I transfer from "002704070004747" to "01018737883383" with "10000" amount and "970406" cardCode from "createDomesticNapasFT" file
+    And I transfer from "002704070004747" to "0129837294" with "10000" amount and "970406" cardCode from "createDomesticNapasFT" file
     Then I click "Send" button
     And I verify "resultCode" "00" is displayed in response
     And I verify "resultMessage" "Success" is displayed in response
+#    And I verify "transactionFee" "8250" is displayed in response
     And I logout with "minhson"
 
   @Napas-02
@@ -47,4 +49,6 @@ Feature: Napas
     And I verify "bankName" "VIETCOMBANK" is displayed in response
     And I verify "cardCode" "970414" is displayed in response
     And I verify "bankName" "OCEANBANK" is displayed in response
+    And I verify "cardCode" "970406" is displayed in response
+    And I verify "bankName" "DONGA BANK" is displayed in response
     And I logout with "minhson"
