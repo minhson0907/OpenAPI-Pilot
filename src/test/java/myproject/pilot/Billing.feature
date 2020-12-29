@@ -8,7 +8,7 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "inquireBill" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I inquire the bill with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "inquireBilling" file
     Then I click "Send" button
     And I verify "resultCode" "00" is displayed in response
@@ -16,7 +16,7 @@ Feature: Billing Service
     And I logout with "minhson"
     Examples:
       | serviceCode | providerId    | serviceType | customerCode   | userName   | accountNumber   | merchantId | amount | phone      | topupPlanCode |
-#      | billing     | EVN           | ELECTRIC    | PK06000122470  | chungnq86  | 068704070012891 | EVNNPC     | 1000   | 0983234166 |               |
+#      | billing     | EVN           | ELECTRIC    | PK06000122470  | minhson0907  | 002704070016025 | EVNNPC     | 1000   | 0983234167 |               |
 #      | billing     | 190008@000002 | INTERNET    | CTO-01-0134638 | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
 #      | billing     | 200000@000002 | CAP         | 0011900910A    | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
 #      | billing     | 109800@000003 | PHONE       | 0348736666     | chungnq86  | 068704070012891 | VNPAY      | 1000   | 0983234166 |               |
@@ -32,7 +32,7 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "inquireBill" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I inquire the bill with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "inquireBilling" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -45,7 +45,7 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "createPaymentBill" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I pay the above bill with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "createPaymentBill" file
     Then I click "Send" button
     And I verify "resultCode" "00000" is displayed in response
@@ -66,7 +66,7 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "inquireBill" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I inquire the bill with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "inquireBilling" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -83,7 +83,7 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "createPaymentBill" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I pay all the above bill with with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "createPaymentBillPayAll" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -100,7 +100,7 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "inquireServiceList" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I inquire service list with serviceType is "BILLING" from "inquireServiceList" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -118,7 +118,7 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "inquireProviderList" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I inquire provider list with serviceType is "<serviceType>" and serviceCode is "<serviceCode>" from "inquireProviderList" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -139,7 +139,7 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "inquireTopupCodes" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I inquire code topup with providerId is "VNPAY" from "inquireTopupCodes" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -160,7 +160,7 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "createPaymentBill" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I topup with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "createTopup" file
     Then I click "Send" button
     And I verify "resultCode" "00000" is displayed in response
@@ -177,7 +177,7 @@ Feature: Billing Service
     And I choose version "1.0.0"
     Then I access into "createPaymentBill" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I pay loan with "<serviceCode>" serviceCode, "<providerId>" providerId, "<serviceType>" serviceType, "<customerCode>" customerCode, "<userName>" userName, "<accountNumber>" accountNumber, "<merchantId>" merchantId, "<amount>" amount, "<phone>" phone, "<topupPlanCode>" topupPlanCode from "createTopup" file
     Then I click "Send" button
     And I verify "resultCode" "00000" is displayed in response

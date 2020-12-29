@@ -8,8 +8,8 @@ Feature: Inhouse FT
     Then I choose version "1.0.0"
     And I access into "createInhouseFT" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
-    And I transfer from "002704070000217" to "068704070000254" with "5000" amount from "inhouseFT" file
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
+    And I transfer from "002704070016025" to "002704070011069" with "1" amount from "inhouseFT" file
     Then I click "Send" button
     And I verify "resultCode" "00" is displayed in response
     And I verify "resultMessage" "Success" is displayed in response
@@ -22,8 +22,8 @@ Feature: Inhouse FT
     Then I choose version "1.0.0"
     And I access into "createInhouseFT" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
-    And I transfer from "002704070000217" to "068704070000254" with "5000" amount from "inhouseFT" file
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
+    And I transfer from "002704070016025" to "002704070011069" with "1" amount from "inhouseFT" file
     Then I click "Send" button
     And I verify "resultCode" "00" is displayed in response
     And I verify "resultMessage" "Success" is displayed in response
@@ -33,8 +33,8 @@ Feature: Inhouse FT
     Then I choose version "1.0.0"
     And I access into "inquireInhouseFTStatus" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
-    And I transfer from "002704070000217" with the above trace number from "inhouseFTStatus" file
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
+    And I transfer from "002704070016025" with the above trace number from "inhouseFTStatus" file
     Then I click "Send" button
     And I verify "message" "SUCCESS" is displayed in response
     And I logout with "minhson"

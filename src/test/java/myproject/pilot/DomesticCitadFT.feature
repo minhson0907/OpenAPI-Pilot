@@ -8,8 +8,8 @@ Feature: Citad
     Then I choose version "1.0.0"
     And I access into "createDomesticCitadFT" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
-    And I transfer from "002704070000217" to "068704070000254" with "313000" amount, "89203002" bankId and "receiver" feePayer from "createDomesticCitadFT" file
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
+    And I transfer from "002704070016025" to "068704070000254" with "313000" amount, "89203002" bankId and "receiver" feePayer from "createDomesticCitadFT" file
     Then I click "Send" button
     And I verify "resultCode" "00" is displayed in response
     And I verify "resultMessage" "Success" is displayed in response
@@ -23,8 +23,8 @@ Feature: Citad
     Then I choose version "1.0.0"
     And I access into "createDomesticCitadFT" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
-    And I transfer from "002704070000217" to "068704070000254" with "313000" amount, "89203002" bankId and "sender" feePayer from "createDomesticCitadFT" file
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
+    And I transfer from "002704070016025" to "068704070000254" with "313000" amount, "89203002" bankId and "sender" feePayer from "createDomesticCitadFT" file
     Then I click "Send" button
     And I verify "resultCode" "00" is displayed in response
     And I verify "resultMessage" "Success" is displayed in response
@@ -38,7 +38,7 @@ Feature: Citad
     Then I choose version "1.0.0"
     And I access into "createDomesticCitadFT" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I transfer from "<fromAccount>" to "<toAccount>" with "<amount>" amount, "<bankId>" bankId and "<feePayer>" feePayer from "createDomesticCitadFT" file
     Then I click "Send" button
     And I verify "resultCode" "<resultCode>" is displayed in response
@@ -47,9 +47,9 @@ Feature: Citad
     Examples:
       | fromAccount     | toAccount       | amount      | bankId   | feePayer | resultCode | resultMessage                |
       | 123457894101    | 068704070000254 | 1           | 89203002 | receiver | 301228     | fromAccountNumber is invalid |
-      | 002704070000217 | 068704070000254 | 1           | 89203002 | receiver | 302001     | transferAmount is invalid    |
-      | 002704070000217 | 068704070000254 | 12345678910 | 89203002 | receiver | 301110     | transferAmount is invalid    |
-      | 002704070000217 | 068704070000254 | 100000      | 12345678 | receiver | 999990     | toBankId is invalid          |
+      | 002704070016025 | 068704070000254 | 1           | 89203002 | receiver | 302001     | transferAmount is invalid    |
+      | 002704070016025 | 068704070000254 | 12345678910 | 89203002 | receiver | 301110     | transferAmount is invalid    |
+      | 002704070016025 | 068704070000254 | 100000      | 12345678 | receiver | 999990     | toBankId is invalid          |
 
   @Citad-04
   Scenario Outline: Verify citad with fields: fromAccount, toAccount, amount, bankId, feePayer
@@ -58,7 +58,7 @@ Feature: Citad
     Then I choose version "1.0.0"
     And I access into "createDomesticCitadFT" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I transfer from "<fromAccount>" to "<toAccount>" with "<amount>" amount, "<bankId>" bankId and "<feePayer>" feePayer from "createDomesticCitadFT" file
     Then I click "Send" button
     And I verify "resultCode" "<resultCode>" is displayed in response
@@ -78,7 +78,7 @@ Feature: Citad
     Then I choose version "1.0.0"
     And I access into "inquireCitadBank" api
     And I click on "Try it" tab
-    And I input "f6ac5b8aa8e6d566f7e634d0fda4a356" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I inquire citad bank from "inquireCitadBank" file
     Then I click "Send" button
     And I verify "resultCode" "00" is displayed in response

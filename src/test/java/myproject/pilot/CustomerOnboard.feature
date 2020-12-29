@@ -8,7 +8,7 @@ Feature: Customer Onboard Service
     And I choose version "1.0.0"
     Then I access into "createImoneyRegistration" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I create iMoney card with "QC HDBANK" name and "qcteam@hdbank.com.vn" email from "createImoneyRegistration" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -21,7 +21,7 @@ Feature: Customer Onboard Service
     And I choose version "1.0.0"
     Then I access into "createImoneyRegistration" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I create iMoney card with "QC HDBANK" name and "qcteam@hdbank.com.vn" email from "createImoneyRegistration" file
     Then I click "Send" button
     And I verify "resultMessage" "Success" is displayed in response
@@ -46,13 +46,12 @@ Feature: Customer Onboard Service
     And I choose version "1.0.0"
     Then I access into "createImoneyRegistration" api
     And I click on "Try it" tab
-    And I input "296a6063c99cf8a01ec1232546f91512" Client Secret
+    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
     And I inquire with "<cardNum>" cardNumber from "inquireImoneyInfo" file
     Then I click "Send" button
     And I verify "resultMessage" "<msg>" is displayed in response
     And I logout with "minhson"
     Examples:
       | cardNum      | msg                   |
-      | 229618818160 | Card number not exist |
-      | 318443496960 | Card number not exist |
-      | 81245826100  | Card number not exist |
+      | 217891350150 | Card number not exist |
+      | 800001220726 | Card number not exist |
