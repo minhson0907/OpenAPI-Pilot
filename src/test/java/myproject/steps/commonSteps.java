@@ -61,7 +61,7 @@ public class commonSteps extends TestBase {
     public void iClickButton(String button) throws Exception {
         waitElement(By.xpath("//button[text()='" + button + "']"));
         driver.findElement(By.xpath("//button[text()='" + button + "']")).click();
-        Thread.sleep(5000);
+        Thread.sleep(7000);
     }
 
     @And("^I input \"([^\"]*)\" into Authorization$")

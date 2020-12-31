@@ -13,7 +13,7 @@ import java.util.UUID;
 
 public class cardSteps extends TestBase {
 
-    @And("^I inquire VJA payment history with \"([^\"]*)\" user name, \"([^\"]*)\" card number from \"([^\"]*)\" file within a month$")
+    @And("^I inquire VJA payment history with \"([^\"]*)\" user name, \"([^\"]*)\" card number from \"([^\"]*)\" api within a month$")
     public void iInquireVJAPaymentHistoryWithCardNumberFromFileWithinAMonth(String userName,String cardNum, String path) throws Exception {
         String olduserName,oldCard,oldDate;
         olduserName = getValueInLine(path,17,27,5);
@@ -30,7 +30,7 @@ public class cardSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @And("^I inquire VJA card information with \"([^\"]*)\" card number and \"([^\"]*)\" user name from \"([^\"]*)\" file$")
+    @And("^I inquire VJA card information with \"([^\"]*)\" card number and \"([^\"]*)\" user name from \"([^\"]*)\" api$")
     public void iInquireVJACardInformationWithCardNumberFromFile(String cardNum,String userName, String path) throws Exception {
         String oldCard,oldUserName;
         oldCard = getValueInLine(path,19,31,5);
@@ -43,7 +43,7 @@ public class cardSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @And("^I top up from \"([^\"]*)\" to \"([^\"]*)\" with \"([^\"]*)\" amount from \"([^\"]*)\" file$")
+    @And("^I top up from \"([^\"]*)\" to \"([^\"]*)\" with \"([^\"]*)\" amount from \"([^\"]*)\" api$")
     public void iTopUpFromToWithAmountFromFile(String fromAccount, String toAccount, String amount, String fileName) throws Exception {
         String oldRequestId,oldFromAccount,oldToAccount,oldAmount;
         oldRequestId = getValueInLine(fileName,18,21,2);
@@ -61,7 +61,7 @@ public class cardSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @And("^I send a request otp with \"([^\"]*)\" cardNumber, \"([^\"]*)\" amount and \"([^\"]*)\" userName from \"([^\"]*)\" file$")
+    @And("^I send a request otp with \"([^\"]*)\" cardNumber, \"([^\"]*)\" amount and \"([^\"]*)\" userName from \"([^\"]*)\" api$")
     public void iSendARequestOtpWithCardNumberAmountAndUserNameFromFile(String cardNumber, String amount, String userName, String fileName) throws Throwable {
         String oldRequestId, oldcardNumber, oldamount, olduserName;
         oldRequestId = getValueInLine(fileName,18,21,2);
@@ -79,7 +79,7 @@ public class cardSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @Then("^I pay VJA ticket with the above otp, \"([^\"]*)\" cardNumber, \"([^\"]*)\" amount and \"([^\"]*)\" userName from \"([^\"]*)\" file$")
+    @Then("^I pay VJA ticket with the above otp, \"([^\"]*)\" cardNumber, \"([^\"]*)\" amount and \"([^\"]*)\" userName from \"([^\"]*)\" api$")
     public void iPayVJATicketWithTheAboveOtpCardNumberAmountAndUserNameFromFile(String cardNumber, String amount, String userName, String fileName) throws Throwable {
         String oldRequestId, oldcardNumber, oldamount, olduserName;
         oldRequestId = getValueInLine(fileName,18,21,2);
@@ -97,7 +97,7 @@ public class cardSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @Then("^I inquire credit card list with \"([^\"]*)\" clientIdentifier from \"([^\"]*)\" file$")
+    @Then("^I inquire credit card list with \"([^\"]*)\" clientIdentifier from \"([^\"]*)\" api$")
     public void iInquireCreditCardListWithClientIdentifierFromFile(String id, String fileName) throws Throwable {
         String oldRequestId, oldId;
         oldRequestId = getValueInLine(fileName,18,21,2);

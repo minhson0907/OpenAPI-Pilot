@@ -25,7 +25,7 @@ public class inhouseFTSteps extends TestBase {
         System.out.println("********************* " + traceNumber);
     }
 
-    @And("^I transfer from \"([^\"]*)\" to \"([^\"]*)\" with \"([^\"]*)\" amount from \"([^\"]*)\" file$")
+    @And("^I transfer from \"([^\"]*)\" to \"([^\"]*)\" with \"([^\"]*)\" amount from \"([^\"]*)\" api$")
     public void iTransferFromTo(String fromAccountNum, String toAccountNum, String amount, String path) throws Throwable {
         String oldLine1,oldLine2,oldAmount;
         File file = new File(System.getProperty("user.dir") + "\\data\\" + path);
@@ -61,7 +61,7 @@ public class inhouseFTSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @And("^I transfer from \"([^\"]*)\" with the above trace number from \"([^\"]*)\" file$")
+    @And("^I transfer from \"([^\"]*)\" with the above trace number from \"([^\"]*)\" api$")
     public void iTransferFromWithTheAboveTraceNumberFromFile(String fromAccountNum, String path) throws Throwable {
         String oldRequestId,oldLine1,oldLine2,oldLine3;
         File file = new File(System.getProperty("user.dir") + "\\data\\" + path);

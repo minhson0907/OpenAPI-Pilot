@@ -14,7 +14,7 @@ public class customerOnboardSteps extends TestBase {
 
     String cardNumber;
 
-    @And("^I create iMoney card with \"([^\"]*)\" name and \"([^\"]*)\" email from \"([^\"]*)\" file$")
+    @And("^I create iMoney card with \"([^\"]*)\" name and \"([^\"]*)\" email from \"([^\"]*)\" api$")
     public void iCreateSkyClubCardWithFromFile(String name, String email,String path) throws Throwable {
         String oldRequestId, oldNumberPhone, oldName, oldEmail;
         File file = new File(System.getProperty("user.dir") + "\\data\\" + path);
@@ -52,7 +52,7 @@ public class customerOnboardSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @And("^I inquire with the above cardNumber from \"([^\"]*)\" file$")
+    @And("^I inquire with the above cardNumber from \"([^\"]*)\" api$")
     public void iInquireWithTheAboveCardNumberFromFile(String path) throws Throwable {
         String oldCard;
         File file = new File(System.getProperty("user.dir") + "\\data\\" + path);
@@ -86,7 +86,7 @@ public class customerOnboardSteps extends TestBase {
 
     }
 
-    @And("^I inquire with \"([^\"]*)\" cardNumber from \"([^\"]*)\" file$")
+    @And("^I inquire with \"([^\"]*)\" cardNumber from \"([^\"]*)\" api$")
     public void iInquireWithCardNumberFromFile(String cardNumber, String fileName) throws Throwable {
         String oldCard;
         String fileContents = readFile(fileName);

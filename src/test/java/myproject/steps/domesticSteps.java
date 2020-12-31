@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class domesticSteps extends TestBase {
 
-    @And("^I transfer from \"([^\"]*)\" to \"([^\"]*)\" with \"([^\"]*)\" amount, \"([^\"]*)\" bankId and \"([^\"]*)\" feePayer from \"([^\"]*)\" file$")
+    @And("^I transfer from \"([^\"]*)\" to \"([^\"]*)\" with \"([^\"]*)\" amount, \"([^\"]*)\" bankId and \"([^\"]*)\" feePayer from \"([^\"]*)\" api$")
     public void iTransferFromToWithAmountAndBankIdFromFile(String fromAccount, String toAccount, String amount, String bankId, String feePayer, String fileName) throws Throwable {
         String oldRequestId,oldFromAccount,oldToAccount,oldAmount,oldFreePayer,oldBankId;
         oldRequestId = getValueInLine(fileName,18,21,2);
@@ -32,7 +32,7 @@ public class domesticSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @And("^I inquire citad bank from \"([^\"]*)\" file$")
+    @And("^I inquire citad bank from \"([^\"]*)\" api$")
     public void iInquireCitadBankFromFile(String fileName) throws Throwable {
         String oldRequestId;
         oldRequestId = getValueInLine(fileName,18,21,2);
@@ -45,7 +45,7 @@ public class domesticSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @And("^I transfer from \"([^\"]*)\" to \"([^\"]*)\" with \"([^\"]*)\" amount and \"([^\"]*)\" cardCode from \"([^\"]*)\" file$")
+    @And("^I transfer from \"([^\"]*)\" to \"([^\"]*)\" with \"([^\"]*)\" amount and \"([^\"]*)\" cardCode from \"([^\"]*)\" api$")
     public void iTransferFromToWithAmountAndCardCodeFromFile(String fromAccount, String toAccount, String amount, String cardCode, String fileName) throws Throwable {
         String oldRequestId,oldFromAccount,oldToAccount,oldAmount,oldCardCode;
         oldRequestId = getValueInLine(fileName,18,21,2);
@@ -68,7 +68,7 @@ public class domesticSteps extends TestBase {
 
     }
 
-    @And("^I inquire to \"([^\"]*)\" with \"([^\"]*)\" cardCode from \"([^\"]*)\" file$")
+    @And("^I inquire to \"([^\"]*)\" with \"([^\"]*)\" cardCode from \"([^\"]*)\" api$")
     public void iInquireToWithAmountAndCardCodeFromFile(String toAccount, String cardCode, String fileName) throws Throwable {
         String oldRequestId,oldToAccount,oldAmount,oldCardCode;
         oldRequestId = getValueInLine(fileName,18,21,2);

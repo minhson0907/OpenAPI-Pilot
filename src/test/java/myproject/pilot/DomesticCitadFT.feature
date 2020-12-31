@@ -1,75 +1,75 @@
 @api @Citad
 Feature: Citad
 
-  @Citad-01
-  Scenario: Citad with feePayer is receiver
-    Given I login with "minhson" and "Son112233!"
-    When I access into "DomesticCitadFTProduct" on portal at 1 page
-    Then I choose version "1.0.0"
-    And I access into "createDomesticCitadFT" api
-    And I click on "Try it" tab
-    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
-    And I transfer from "002704070016025" to "068704070000254" with "313000" amount, "89203002" bankId and "receiver" feePayer from "createDomesticCitadFT" file
-    Then I click "Send" button
-    And I verify "resultCode" "00" is displayed in response
-    And I verify "resultMessage" "Success" is displayed in response
-    And I verify "transactionFee" "6600" is displayed in response
-    And I logout with "minhson"
-
-  @Citad-02
-  Scenario: Citad with feePayer is sender
-    Given I login with "minhson" and "Son112233!"
-    When I access into "DomesticCitadFTProduct" on portal at 1 page
-    Then I choose version "1.0.0"
-    And I access into "createDomesticCitadFT" api
-    And I click on "Try it" tab
-    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
-    And I transfer from "002704070016025" to "068704070000254" with "313000" amount, "89203002" bankId and "sender" feePayer from "createDomesticCitadFT" file
-    Then I click "Send" button
-    And I verify "resultCode" "00" is displayed in response
-    And I verify "resultMessage" "Success" is displayed in response
-    And I verify "transactionFee" "6600" is displayed in response
-    And I logout with "minhson"
-
-  @Citad-03
-  Scenario Outline: Verify citad with fields: fromAccount, toAccount, amount, bankId, feePayer
-    Given I login with "minhson" and "Son112233!"
-    When I access into "DomesticCitadFTProduct" on portal at 1 page
-    Then I choose version "1.0.0"
-    And I access into "createDomesticCitadFT" api
-    And I click on "Try it" tab
-    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
-    And I transfer from "<fromAccount>" to "<toAccount>" with "<amount>" amount, "<bankId>" bankId and "<feePayer>" feePayer from "createDomesticCitadFT" file
-    Then I click "Send" button
-    And I verify "resultCode" "<resultCode>" is displayed in response
-    And I verify "resultMessage" "<resultMessage>" is displayed in response
-    And I logout with "minhson"
-    Examples:
-      | fromAccount     | toAccount       | amount      | bankId   | feePayer | resultCode | resultMessage                |
-      | 123457894101    | 068704070000254 | 1           | 89203002 | receiver | 301228     | fromAccountNumber is invalid |
-      | 002704070016025 | 068704070000254 | 1           | 89203002 | receiver | 302001     | transferAmount is invalid    |
-      | 002704070016025 | 068704070000254 | 12345678910 | 89203002 | receiver | 301110     | transferAmount is invalid    |
-      | 002704070016025 | 068704070000254 | 100000      | 12345678 | receiver | 999990     | toBankId is invalid          |
-
-  @Citad-04
-  Scenario Outline: Verify citad with fields: fromAccount, toAccount, amount, bankId, feePayer
-    Given I login with "minhson" and "Son112233!"
-    When I access into "DomesticCitadFTProduct" on portal at 1 page
-    Then I choose version "1.0.0"
-    And I access into "createDomesticCitadFT" api
-    And I click on "Try it" tab
-    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
-    And I transfer from "<fromAccount>" to "<toAccount>" with "<amount>" amount, "<bankId>" bankId and "<feePayer>" feePayer from "createDomesticCitadFT" file
-    Then I click "Send" button
-    And I verify "resultCode" "<resultCode>" is displayed in response
-    And I verify "resultMessage" "<resultMessage>" is displayed in response
-    And I logout with "minhson"
-    Examples:
-      | fromAccount     | toAccount       | amount      | bankId   | feePayer | resultCode | resultMessage                |
-      | 123457894101    | 068704070000254 | 1           | 89203002 | sender   | 301228     | fromAccountNumber is invalid |
-      | 002704070000217 | 068704070000254 | 1           | 89203002 | sender   | 00         | Success                      |
-      | 002704070000217 | 068704070000254 | 12345678910 | 89203002 | sender   | 301110     | transferAmount is invalid    |
-      | 002704070000217 | 068704070000254 | 100000      | 12345678 | sender   | 999990     | toBankId is invalid          |
+#  @Citad-01
+#  Scenario: Citad with feePayer is receiver
+#    Given I login with "minhson" and "Son112233!"
+#    When I access into "DomesticCitadFTProduct" on portal at 1 page
+#    Then I choose version "1.0.0"
+#    And I access into "createDomesticCitadFT" api
+#    And I click on "Try it" tab
+#    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
+#    And I transfer from "002704070016025" to "068704070000254" with "313000" amount, "89203002" bankId and "receiver" feePayer from "createDomesticCitadFT" api
+#    Then I click "Send" button
+#    And I verify "resultCode" "00" is displayed in response
+#    And I verify "resultMessage" "Success" is displayed in response
+#    And I verify "transactionFee" "6600" is displayed in response
+#    And I logout with "minhson"
+#
+#  @Citad-02
+#  Scenario: Citad with feePayer is sender
+#    Given I login with "minhson" and "Son112233!"
+#    When I access into "DomesticCitadFTProduct" on portal at 1 page
+#    Then I choose version "1.0.0"
+#    And I access into "createDomesticCitadFT" api
+#    And I click on "Try it" tab
+#    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
+#    And I transfer from "002704070016025" to "068704070000254" with "313000" amount, "89203002" bankId and "sender" feePayer from "createDomesticCitadFT" api
+#    Then I click "Send" button
+#    And I verify "resultCode" "00" is displayed in response
+#    And I verify "resultMessage" "Success" is displayed in response
+#    And I verify "transactionFee" "6600" is displayed in response
+#    And I logout with "minhson"
+#
+#  @Citad-03
+#  Scenario Outline: Verify citad with fields: fromAccount, toAccount, amount, bankId, feePayer
+#    Given I login with "minhson" and "Son112233!"
+#    When I access into "DomesticCitadFTProduct" on portal at 1 page
+#    Then I choose version "1.0.0"
+#    And I access into "createDomesticCitadFT" api
+#    And I click on "Try it" tab
+#    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
+#    And I transfer from "<fromAccount>" to "<toAccount>" with "<amount>" amount, "<bankId>" bankId and "<feePayer>" feePayer from "createDomesticCitadFT" api
+#    Then I click "Send" button
+#    And I verify "resultCode" "<resultCode>" is displayed in response
+#    And I verify "resultMessage" "<resultMessage>" is displayed in response
+#    And I logout with "minhson"
+#    Examples:
+#      | fromAccount     | toAccount       | amount      | bankId   | feePayer | resultCode | resultMessage                |
+#      | 123457894101    | 068704070000254 | 1           | 89203002 | receiver | 301228     | fromAccountNumber is invalid |
+#      | 002704070016025 | 068704070000254 | 1           | 89203002 | receiver | 302001     | transferAmount is invalid    |
+#      | 002704070016025 | 068704070000254 | 12345678910 | 89203002 | receiver | 301110     | transferAmount is invalid    |
+#      | 002704070016025 | 068704070000254 | 100000      | 12345678 | receiver | 999990     | toBankId is invalid          |
+#
+#  @Citad-04
+#  Scenario Outline: Verify citad with fields: fromAccount, toAccount, amount, bankId, feePayer
+#    Given I login with "minhson" and "Son112233!"
+#    When I access into "DomesticCitadFTProduct" on portal at 1 page
+#    Then I choose version "1.0.0"
+#    And I access into "createDomesticCitadFT" api
+#    And I click on "Try it" tab
+#    And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
+#    And I transfer from "<fromAccount>" to "<toAccount>" with "<amount>" amount, "<bankId>" bankId and "<feePayer>" feePayer from "createDomesticCitadFT" api
+#    Then I click "Send" button
+#    And I verify "resultCode" "<resultCode>" is displayed in response
+#    And I verify "resultMessage" "<resultMessage>" is displayed in response
+#    And I logout with "minhson"
+#    Examples:
+#      | fromAccount     | toAccount       | amount      | bankId   | feePayer | resultCode | resultMessage                |
+#      | 123457894101    | 068704070000254 | 1           | 89203002 | sender   | 301228     | fromAccountNumber is invalid |
+#      | 002704070000217 | 068704070000254 | 1           | 89203002 | sender   | 00         | Success                      |
+#      | 002704070000217 | 068704070000254 | 12345678910 | 89203002 | sender   | 301110     | transferAmount is invalid    |
+#      | 002704070000217 | 068704070000254 | 100000      | 12345678 | sender   | 999990     | toBankId is invalid          |
 
   @Citad-05
   Scenario: inquireCitadBank
@@ -79,7 +79,7 @@ Feature: Citad
     And I access into "inquireCitadBank" api
     And I click on "Try it" tab
     And I input "22f20a7ccf140a86008f120bf1fb27c8" Client Secret
-    And I inquire citad bank from "inquireCitadBank" file
+    And I inquire citad bank from "inquireCitadBank" api
     Then I click "Send" button
     And I verify "resultCode" "00" is displayed in response
     And I verify "resultMessage" "Success" is displayed in response

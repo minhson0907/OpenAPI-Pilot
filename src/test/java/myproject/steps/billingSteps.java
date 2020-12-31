@@ -13,7 +13,7 @@ public class billingSteps extends TestBase {
     String localBillID, billNo, billSeries, billDetail, billValue,localBillID1, billNo1, billSeries1, billValue1,localBillID2, billNo2, billSeries2, billValue2;
     String topupCode;
 
-    @And("^I inquire the bill with \"([^\"]*)\" serviceCode, \"([^\"]*)\" providerId, \"([^\"]*)\" serviceType, \"([^\"]*)\" customerCode, \"([^\"]*)\" userName, \"([^\"]*)\" accountNumber, \"([^\"]*)\" merchantId, \"([^\"]*)\" amount, \"([^\"]*)\" phone, \"([^\"]*)\" topupPlanCode from \"([^\"]*)\" file$")
+    @And("^I inquire the bill with \"([^\"]*)\" serviceCode, \"([^\"]*)\" providerId, \"([^\"]*)\" serviceType, \"([^\"]*)\" customerCode, \"([^\"]*)\" userName, \"([^\"]*)\" accountNumber, \"([^\"]*)\" merchantId, \"([^\"]*)\" amount, \"([^\"]*)\" phone, \"([^\"]*)\" topupPlanCode from \"([^\"]*)\" api$")
     public void iInquireTheBillWithServiceCodeProviderIdServiceTypeCustomerCodeUserNameAccountNumberMerchantId(String serCode, String proId, String serviceType, String customerCode, String userName, String accountNumber, String merchantId, String amount, String phone, String topupPlanCode, String path) throws Exception {
         String oldRequestId,oldServiceCode, oldProviderId, oldServiceType, oldCustomerCode, oldUserName, oldAccountNumber, oldMerchantId, oldAmount, oldPhone,oldtopupPlanCode;
         File file = new File(System.getProperty("user.dir") + "\\data\\" + path);
@@ -66,7 +66,7 @@ public class billingSteps extends TestBase {
         System.out.println("******************* " + item);
     }
 
-    @And("^I pay the above bill with \"([^\"]*)\" serviceCode, \"([^\"]*)\" providerId, \"([^\"]*)\" serviceType, \"([^\"]*)\" customerCode, \"([^\"]*)\" userName, \"([^\"]*)\" accountNumber, \"([^\"]*)\" merchantId, \"([^\"]*)\" amount, \"([^\"]*)\" phone, \"([^\"]*)\" topupPlanCode from \"([^\"]*)\" file$")
+    @And("^I pay the above bill with \"([^\"]*)\" serviceCode, \"([^\"]*)\" providerId, \"([^\"]*)\" serviceType, \"([^\"]*)\" customerCode, \"([^\"]*)\" userName, \"([^\"]*)\" accountNumber, \"([^\"]*)\" merchantId, \"([^\"]*)\" amount, \"([^\"]*)\" phone, \"([^\"]*)\" topupPlanCode from \"([^\"]*)\" api$")
     public void iPayTheAboveBillFromFile(String serCode, String proId, String serviceType, String customerCode, String userName, String accountNumber, String merchantId, String amount, String phone, String topupPlanCode,String fileName) throws Throwable {
         String oldRequestId,oldServiceCode,oldproviderId, oldserviceType, oldcustomerCode, olduserName, oldaccountNumber, oldmerchantId, oldamount, oldphoneNumber,oldtopupPlanCode, oldlocalBillID, oldbillNo, oldbillSeries, oldbillDetail, oldbillValue;
         String fileContents = readFile(fileName);
@@ -200,7 +200,7 @@ public class billingSteps extends TestBase {
         System.out.println("******************* " + billValue);
     }
 
-    @And("^I inquire service list with serviceType is \"([^\"]*)\" from \"([^\"]*)\" file$")
+    @And("^I inquire service list with serviceType is \"([^\"]*)\" from \"([^\"]*)\" api$")
     public void iInquireServiceListWithServiceTypeIsFromFile(String serviceType, String fileName) throws Throwable {
         String oldServiceType;
         String fileContents = readFile(fileName);
@@ -210,7 +210,7 @@ public class billingSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @And("^I inquire provider list with serviceType is \"([^\"]*)\" and serviceCode is \"([^\"]*)\" from \"([^\"]*)\" file$")
+    @And("^I inquire provider list with serviceType is \"([^\"]*)\" and serviceCode is \"([^\"]*)\" from \"([^\"]*)\" api$")
     public void iInquireProviderListWithServiceTypeIsAndServiceCodeIsFromFile(String serviceType, String serviceCode, String fileName) throws Throwable {
         String oldServiceType,oldServiceCode;
         String fileContents = readFile(fileName);
@@ -222,7 +222,7 @@ public class billingSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @And("^I inquire code topup with providerId is \"([^\"]*)\" from \"([^\"]*)\" file$")
+    @And("^I inquire code topup with providerId is \"([^\"]*)\" from \"([^\"]*)\" api$")
     public void iInquireCodeTopupWithProviderIdIsFromFile(String providerId, String fileName) throws Throwable {
         String oldproviderId;
         String fileContents = readFile(fileName);
@@ -232,7 +232,7 @@ public class billingSteps extends TestBase {
         driver.findElement(By.id("body")).sendKeys(fileContents);
     }
 
-    @And("^I (topup|pay loan) with \"([^\"]*)\" serviceCode, \"([^\"]*)\" providerId, \"([^\"]*)\" serviceType, \"([^\"]*)\" customerCode, \"([^\"]*)\" userName, \"([^\"]*)\" accountNumber, \"([^\"]*)\" merchantId, \"([^\"]*)\" amount, \"([^\"]*)\" phone, \"([^\"]*)\" topupPlanCode from \"([^\"]*)\" file$")
+    @And("^I (topup|pay loan) with \"([^\"]*)\" serviceCode, \"([^\"]*)\" providerId, \"([^\"]*)\" serviceType, \"([^\"]*)\" customerCode, \"([^\"]*)\" userName, \"([^\"]*)\" accountNumber, \"([^\"]*)\" merchantId, \"([^\"]*)\" amount, \"([^\"]*)\" phone, \"([^\"]*)\" topupPlanCode from \"([^\"]*)\" api$")
     public void iTopupTheAboveBillFromFile(String type, String serCode, String proId, String serviceType, String customerCode, String userName, String accountNumber, String merchantId, String amount, String phone, String topupPlanCode,String fileName) throws Throwable {
         String oldRequestId,oldServiceCode, oldProviderId, oldServiceType, oldCustomerCode, oldUserName, oldAccountNumber, oldMerchantId, oldAmount, oldPhone,oldtopupPlanCode;
         String fileContents = readFile(fileName);
@@ -269,7 +269,7 @@ public class billingSteps extends TestBase {
 
     }
 
-    @And("^I pay all the above bill with with \"([^\"]*)\" serviceCode, \"([^\"]*)\" providerId, \"([^\"]*)\" serviceType, \"([^\"]*)\" customerCode, \"([^\"]*)\" userName, \"([^\"]*)\" accountNumber, \"([^\"]*)\" merchantId, \"([^\"]*)\" amount, \"([^\"]*)\" phone, \"([^\"]*)\" topupPlanCode from \"([^\"]*)\" file$")
+    @And("^I pay all the above bill with with \"([^\"]*)\" serviceCode, \"([^\"]*)\" providerId, \"([^\"]*)\" serviceType, \"([^\"]*)\" customerCode, \"([^\"]*)\" userName, \"([^\"]*)\" accountNumber, \"([^\"]*)\" merchantId, \"([^\"]*)\" amount, \"([^\"]*)\" phone, \"([^\"]*)\" topupPlanCode from \"([^\"]*)\" api$")
     public void iPayAllTheAboveBillWithWithServiceCodeProviderIdServiceTypeCustomerCodeUserNameAccountNumberMerchantIdAmountPhoneTopupPlanCodeFromFile(String serCode, String proId, String serviceType, String customerCode, String userName, String accountNumber, String merchantId, String amount, String phone, String topupPlanCode, String fileName) throws Throwable {
         String oldRequestId,oldServiceCode,oldproviderId, oldserviceType, oldcustomerCode, olduserName, oldaccountNumber, oldmerchantId, oldamount, oldphoneNumber,oldtopupPlanCode, oldlocalBillID, oldbillNo, oldbillSeries, oldbillValue,oldlocalBillID2, oldbillNo2, oldbillSeries2, oldbillValue2;
         String fileContents = readFile(fileName);
